@@ -1,0 +1,26 @@
+<div class="bg-light p-5 rounded-lg m-3">
+    <h1 class="display-4">Bem vindo!</h1>
+    <p class="lead">Tem algo em mente que gostaria de compartilhar? Escreva seus artigos aqui.</p>
+    <hr class="my-4">
+    <p>Crie uma conta e compartilhe seus artigos..</p>
+    <a class="btn btn-primary btn-lg" href="/users/registro" role="button">Criar conta</a>
+</div>
+
+<hr>
+
+<h2>Postagens recentes: </h2>
+
+{{#each postagem}}
+<div class="card mt-4">
+    <div class="card-body">
+        <h3>{{titulo}}</h3>
+        <p>{{descricao}}</p>
+        <a href="/postagem/{{slug}}"><button class="btn btn-success">Leia mais</button></a>
+        <hr>
+        <small><strong>Categoria: </strong>{{categoria.nome}}</small><br>
+        <small>Data de publicação: {{#formatDate data}}{{/formatDate}}</small>
+    </div>
+</div>
+{{else}}
+    <h5>Nenhuma postagem</h5>
+{{/each}}
