@@ -30,7 +30,7 @@ const Postagem = new Schema ({
     newDate: {
             type: Date,
             default: Date.now()
-        }
+    }
 })
 
 mongoose.model('postagens', Postagem);

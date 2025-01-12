@@ -96,7 +96,7 @@ router.post('/categorias/edit', isAdmin, (req, res) => {
     } else {
 
         Categorias.findOne({ _id: req.body.id }).sort({ nome: 'asc' }).then((categoria) => {
-
+ 
             categoria.nome = req.body.nome
             categoria.slug = req.body.slug
 
@@ -259,6 +259,6 @@ router.post('/postagens/deletar/', isAdmin, (req, res) => {
         req.flash('error_msg', 'Houve um erro ao deletar a postagem.' + err)
         res.redirect('/admin/postagens')
     })
-})
+});
 
 export default router;

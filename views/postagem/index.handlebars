@@ -7,3 +7,23 @@
         {{postagem.conteudo}}
     </div>
 </div>
+
+<form action="/comment" method="post">
+    <div class="form-group">
+        <input type="hidden" name="id" value="{{_id}}">
+        <label for="comentario" class="mt-2"><strong>Comente!</strong></label>
+        <textarea style="max-width: 40%; min-height: 100px; margin-bottom: 1%;" class="form-control mt-2"
+            id="comentario" name="comentario" placeholder="Dê sua opinião"></textarea>
+        <button type="submit" class="btn btn-outline-primary" style="margin-bottom: 3%">Comentar</button>
+    </div>
+
+      {{#each comment}}
+    <div class="card mt-4 p-2 " style="min-width: 30%; max-width: 30%">
+        <h6 class="text-center ">{{nome}}</h6>
+        <hr>
+        <p>{{text}}</p>
+    </div>
+    {{else}}
+    <h5>Ninguém comentou ainda</h5>
+    {{/each}}
+</form>
