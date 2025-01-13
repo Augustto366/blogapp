@@ -28,7 +28,8 @@ auth(passport)
 app.use(session({
     secret: 'cursodenode',
     resave: true,
-    saveUninitialized: true
+    saveUninitialized: true,
+    maxAge: 1000 * 60 * 15
 }))
 
 app.use(passport.initialize())
