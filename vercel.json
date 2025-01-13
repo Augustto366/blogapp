@@ -9,12 +9,7 @@
           "src": "/(.*)",
           "dest": "/"
         }
-    ],
-    "functions": {
-        "function.js": {
-          "maxDuration": 30 
-        }
-    }
+    ]
 }
 
     
